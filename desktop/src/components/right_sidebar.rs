@@ -62,10 +62,11 @@ pub fn RightSidebar(props: RightSidebarProps) -> Element {
                 class: "right-sidebar-inner",
                 style: "{inner_style}",
 
-                // Tab bar
+                // Tab bar with close button
                 TabBar {
                     active_tab,
                     on_change: move |tab| state.set_right_sidebar_tab(tab),
+                    on_close: move |_| state.toggle_right_sidebar(),
                 }
 
                 // Tab content

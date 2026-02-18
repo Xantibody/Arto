@@ -21,6 +21,29 @@
   transition: none; /* Disable transition during resize */
 }
 
+/* Sidebar close button (shared between left and right sidebar) */
+.sidebar-panel-close-button {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  width: 28px;
+  height: 28px;
+  opacity: var(--opacity-muted);
+  transition: all var(--transition-normal);
+}
+
+.sidebar-panel-close-button:hover {
+  opacity: 1;
+  border-color: var(--border-color);
+  background: var(--bg-color);
+}
+
 /* Inner wrapper with zoom applied */
 .left-sidebar-inner {
   display: flex;

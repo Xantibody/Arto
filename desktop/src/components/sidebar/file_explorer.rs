@@ -280,7 +280,7 @@ fn DirectoryNavigation(current_dir: PathBuf, mut refresh_counter: Signal<u32>) -
                 }
             }
 
-            // Toolbar buttons container (visibility toggle only)
+            // Toolbar buttons container
             div {
                 class: "left-sidebar-header-toolbar",
 
@@ -294,6 +294,19 @@ fn DirectoryNavigation(current_dir: PathBuf, mut refresh_counter: Signal<u32>) -
                     Icon {
                         name: if show_all_files { IconName::Eye } else { IconName::EyeOff },
                         size: 20,
+                    }
+                }
+
+                // Close sidebar button
+                button {
+                    class: "sidebar-panel-close-button",
+                    title: "Close Sidebar",
+                    onclick: move |_| {
+                        state.toggle_sidebar();
+                    },
+                    Icon {
+                        name: IconName::SidebarLeftCollapse,
+                        size: 18,
                     }
                 }
             }
